@@ -1,16 +1,65 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "posts.html",
+    "href": "posts.html",
+    "title": "Posts",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "text": "¿Qué es y para qué sirve la distribución Dirichlet?\n\n\n\n\n\n\nproability\n\n\ndirichlet\n\n\n\n\n\n\n\n\n\nJun 2, 2024\n\n\nAngel Escalante\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/post-dirichlet/index.html",
+    "href": "posts/post-dirichlet/index.html",
+    "title": "¿Qué es y para qué sirve la distribución Dirichlet?",
+    "section": "",
+    "text": "Si has incursionado en el mundo de la ciencia de datos, la estadística y la probabilidad, casi seguro que has escuchado hablar sobre la distribución Dirichlet. Pero, ¿qué es la distribución Dirichlet? ¿Para qué sirve? ¿Por qué es tan útil?\nIntentaré desvelar los misterios de esta distribución y brindar una intuición sobre esta distribución que le permita al lector dimensionar la importancia de esta distribución y, posiblemente, sus aplicaciones.\nSi buscamos una definición formal, econtraremos con algo de este estilo:\n\nSea un vector aleatorio \\(k\\)-dimensional \\(\\mathbf{X}=(X_1,X_2,...,X_k)\\) tal que las \\(X_i\\)’s son positivas y todas suman 1. \\[\n\\mathbf{X} \\sim Dirichlet(\\theta)\n\\] Parametrizado por un vector de reales positivos \\(\\theta\\). Es una generalización multivariada de la distribución Beta. Las distribuciones Dirichlet son comúnmente usadas como distribución a priori en la estadística Bayesiana.\n\n\n\nEn la teoría de probabilidad bayesiana, si la distribución posterior \\(p(\\theta|x)\\) y la distribución inicial \\(p(\\theta)\\) provienen de la misma familia de distribuciones de probabilidad, entonces la distribución inicial y la posterior se llaman distribuciones conjugadas, y la previa es la conjugada para la función de verosimilitud.\nSi pensamos en el problema de inferir el parámetro \\(\\theta\\) para una distribución a partir de un conjunto de datos \\(x\\) dado, el teorema de Bayes dice que la distribución posterior es igual al producto de la función de verosimilitud \\(p(x|\\theta)\\) y la inicial \\(p(\\theta)\\), normalizada por la probabilidad de los datos \\(p(x)\\):\n\\[\np(\\theta|x)=\\frac{p(x|\\theta)p(\\theta)}{\\int p(x|\\theta^*)p(\\theta^*)d\\theta^*}\n\\]\nDado que la función de verosimilitud generalmente se define a partir del proceso de generación de datos, las diferentes elecciones de la inicial pueden hacer que la integral sea más o menos difícil de calcular. Si la previa tiene la misma forma algebraica que la verosimilitud, a menudo podemos obtener una expresión en forma cerrada para la posterior, evitando la necesidad de integración numérica.\nEste es el caso de la Dirichlet, podemos demostrar con un poco de álgebra que:\n\\[\n\\underbrace{p(\\theta|x)}_{Dirichlet} \\propto \\overbrace{p(x|\\theta)}^{Multinomial} \\underbrace{p(\\theta)}_{Dirichlet}\n\\]\nEs decir, la distribución posterior se distribuye Dirichlet si hay un modelo para los datos con distribución Multinomial. Detalles técnicos aquí\n\n\n\n\n\n\nDistribución Multinomial\n\n\n\n\n\nLa distribución multinomial es una generalización de la distribución binomial. En este caso, en un experimento interesa estudiar no la ocurrencia de un único suceso o la de su contrario, sino la de varios sucesos.\nEjemplo: Encuesta sobre preferencia de tres bebidas: café, jugo o té. Supongamos que tenemos información sobre la probabilidad de preferencia de y se realizan 100 encuestas, con una distribución multinomial podríamos calcular algo del tipo: la probabilidad que 50 personas prefieran café, 30 personas prefieran jugo y 20 personas prefieran té. Ajá, ¿empieza a hacer sentido que papel jugará la Dirichlet?\n\n\n\nSi todo esto te es ajeno, vamos a algo un poco más interesante, visualicemos esta distribución y obtengamos así una intuición de como podemos caracterizar el modelo Multinomial."
+  },
+  {
+    "objectID": "posts/post-dirichlet/index.html#distribución-dirichlet",
+    "href": "posts/post-dirichlet/index.html#distribución-dirichlet",
+    "title": "¿Qué es y para qué sirve la distribución Dirichlet?",
+    "section": "",
+    "text": "Si has incursionado en el mundo de la ciencia de datos, la estadística y la probabilidad, casi seguro que has escuchado hablar sobre la distribución Dirichlet. Pero, ¿qué es la distribución Dirichlet? ¿Para qué sirve? ¿Por qué es tan útil?\nIntentaré desvelar los misterios de esta distribución y brindar una intuición sobre esta distribución que le permita al lector dimensionar la importancia de esta distribución y, posiblemente, sus aplicaciones.\nSi buscamos una definición formal, econtraremos con algo de este estilo:\n\nSea un vector aleatorio \\(k\\)-dimensional \\(\\mathbf{X}=(X_1,X_2,...,X_k)\\) tal que las \\(X_i\\)’s son positivas y todas suman 1. \\[\n\\mathbf{X} \\sim Dirichlet(\\theta)\n\\] Parametrizado por un vector de reales positivos \\(\\theta\\). Es una generalización multivariada de la distribución Beta. Las distribuciones Dirichlet son comúnmente usadas como distribución a priori en la estadística Bayesiana.\n\n\n\nEn la teoría de probabilidad bayesiana, si la distribución posterior \\(p(\\theta|x)\\) y la distribución inicial \\(p(\\theta)\\) provienen de la misma familia de distribuciones de probabilidad, entonces la distribución inicial y la posterior se llaman distribuciones conjugadas, y la previa es la conjugada para la función de verosimilitud.\nSi pensamos en el problema de inferir el parámetro \\(\\theta\\) para una distribución a partir de un conjunto de datos \\(x\\) dado, el teorema de Bayes dice que la distribución posterior es igual al producto de la función de verosimilitud \\(p(x|\\theta)\\) y la inicial \\(p(\\theta)\\), normalizada por la probabilidad de los datos \\(p(x)\\):\n\\[\np(\\theta|x)=\\frac{p(x|\\theta)p(\\theta)}{\\int p(x|\\theta^*)p(\\theta^*)d\\theta^*}\n\\]\nDado que la función de verosimilitud generalmente se define a partir del proceso de generación de datos, las diferentes elecciones de la inicial pueden hacer que la integral sea más o menos difícil de calcular. Si la previa tiene la misma forma algebraica que la verosimilitud, a menudo podemos obtener una expresión en forma cerrada para la posterior, evitando la necesidad de integración numérica.\nEste es el caso de la Dirichlet, podemos demostrar con un poco de álgebra que:\n\\[\n\\underbrace{p(\\theta|x)}_{Dirichlet} \\propto \\overbrace{p(x|\\theta)}^{Multinomial} \\underbrace{p(\\theta)}_{Dirichlet}\n\\]\nEs decir, la distribución posterior se distribuye Dirichlet si hay un modelo para los datos con distribución Multinomial. Detalles técnicos aquí\n\n\n\n\n\n\nDistribución Multinomial\n\n\n\n\n\nLa distribución multinomial es una generalización de la distribución binomial. En este caso, en un experimento interesa estudiar no la ocurrencia de un único suceso o la de su contrario, sino la de varios sucesos.\nEjemplo: Encuesta sobre preferencia de tres bebidas: café, jugo o té. Supongamos que tenemos información sobre la probabilidad de preferencia de y se realizan 100 encuestas, con una distribución multinomial podríamos calcular algo del tipo: la probabilidad que 50 personas prefieran café, 30 personas prefieran jugo y 20 personas prefieran té. Ajá, ¿empieza a hacer sentido que papel jugará la Dirichlet?\n\n\n\nSi todo esto te es ajeno, vamos a algo un poco más interesante, visualicemos esta distribución y obtengamos así una intuición de como podemos caracterizar el modelo Multinomial."
+  },
+  {
+    "objectID": "posts/post-dirichlet/index.html#visualizando-la-distribución",
+    "href": "posts/post-dirichlet/index.html#visualizando-la-distribución",
+    "title": "¿Qué es y para qué sirve la distribución Dirichlet?",
+    "section": "Visualizando la distribución 🎨",
+    "text": "Visualizando la distribución 🎨"
+  },
+  {
+    "objectID": "posts/post-dirichlet/index.html#referencias",
+    "href": "posts/post-dirichlet/index.html#referencias",
+    "title": "¿Qué es y para qué sirve la distribución Dirichlet?",
+    "section": "Referencias 🔗",
+    "text": "Referencias 🔗\n\nDirichlet Distribution\nVisualizing Dirichlet"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "AFEScalante",
+    "title": "Angel Escalante",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+    "text": "👋 ¡Hola! Soy un apasionado por la programación, la ciencia de datos y el desarrollo web. Me encanta combinar mis habilidades analíticas con la tecnología para resolver problemas complejos y crear soluciones innovadoras. Mis principales intereses son:\nProgramación: Desarrollo de algoritmos y soluciones en diversos lenguajes, sobre todo \nCiencia de Datos: Análisis y visualización de datos, modelos predictivos y machine learning. Mi corazón va con \nDesarrollo Web: Creación de dashboards interactivos y aplicaciones web, desde el frontend hasta el backend.   \n\n\n Instituto de Investigación en Matemáticas Aplicadas y Sistemas | CDMX, México | Especialidad Estadística Aplicada | Agosto 2023 - presente\n Benemérita Universidad Autónoma de Puebla | Puebla, México | Licenciatura en Actuaría | Julio 2011 - Agosto 2017\n\n\n\nKantar | Data Scientist (Global Analytics) | Mayo 2024 - presente\nAppsilon | R Shiny Engineer | Septiembre 2022 - Mayo 2024\nKantar | Data Scientist | Agosto 2017 - Septiembre 2022\n\n\n\n Música\n Literatura\n Ajedrez"
+  },
+  {
+    "objectID": "index.html#educación",
+    "href": "index.html#educación",
+    "title": "Angel Escalante",
+    "section": "",
+    "text": "Instituto de Investigación en Matemáticas Aplicadas y Sistemas | CDMX, México | Especialidad Estadística Aplicada | Agosto 2023 - presente\n Benemérita Universidad Autónoma de Puebla | Puebla, México | Licenciatura en Actuaría | Julio 2011 - Agosto 2017"
+  },
+  {
+    "objectID": "index.html#experiencia",
+    "href": "index.html#experiencia",
+    "title": "Angel Escalante",
+    "section": "",
+    "text": "Kantar | Data Scientist (Global Analytics) | Mayo 2024 - presente\nAppsilon | R Shiny Engineer | Septiembre 2022 - Mayo 2024\nKantar | Data Scientist | Agosto 2017 - Septiembre 2022"
+  },
+  {
+    "objectID": "index.html#otros-intereses",
+    "href": "index.html#otros-intereses",
+    "title": "Angel Escalante",
+    "section": "",
+    "text": "Música\n Literatura\n Ajedrez"
   }
 ]

@@ -1,0 +1,57 @@
+---
+title: "¿Qué es y para qué sirve la distribución Dirichlet?"
+author: "Angel Escalante"
+date: "2024-06-02"
+categories: [proability, dirichlet]
+image: "bosque.jpg"
+---
+
+## Distribución Dirichlet 🚀
+
+Si has incursionado en el mundo de la ciencia de datos, la estadística y la probabilidad, casi seguro que has escuchado hablar sobre la distribución Dirichlet. Pero, ¿qué es la distribución Dirichlet? ¿Para qué sirve? ¿Por qué es tan útil?
+
+Intentaré desvelar los misterios de esta distribución y brindar una intuición sobre esta distribución que le permita al lector dimensionar la importancia de esta distribución y, posiblemente, sus aplicaciones.
+
+Si buscamos una definición formal, econtraremos con algo de este estilo:
+
+> Sea un vector aleatorio $k$-dimensional $\mathbf{X}=(X_1,X_2,...,X_k)$ tal que las $X_i$'s son positivas y todas suman 1. $$
+> \mathbf{X} \sim Dirichlet(\theta)
+> $$ Parametrizado por un vector de reales positivos $\theta$. Es una generalización multivariada de la distribución **Beta**. Las distribuciones Dirichlet son comúnmente usadas como distribución a priori en la estadística Bayesiana.
+
+### Conjugada a priori ⭐
+
+En la teoría de probabilidad bayesiana, si la distribución posterior $p(\theta|x)$ y la distribución inicial $p(\theta)$ provienen de la misma familia de distribuciones de probabilidad, entonces la distribución inicial y la posterior se llaman distribuciones conjugadas, y la previa es la conjugada para la función de verosimilitud.
+
+Si pensamos en el problema de inferir el parámetro $\theta$ para una distribución a partir de un conjunto de datos $x$ dado, el teorema de Bayes dice que la distribución posterior es igual al producto de la función de verosimilitud $p(x|\theta)$ y la inicial $p(\theta)$, normalizada por la probabilidad de los datos $p(x)$:
+
+$$
+p(\theta|x)=\frac{p(x|\theta)p(\theta)}{\int p(x|\theta^*)p(\theta^*)d\theta^*}
+$$
+
+Dado que la función de verosimilitud generalmente se define a partir del proceso de generación de datos, las diferentes elecciones de la inicial pueden hacer que la integral sea más o menos difícil de calcular. Si la previa tiene la misma forma algebraica que la verosimilitud, a menudo podemos obtener una expresión en forma cerrada para la posterior, evitando la necesidad de integración numérica.
+
+Este es el caso de la Dirichlet, podemos demostrar con un poco de álgebra que:
+
+$$
+\underbrace{p(\theta|x)}_{Dirichlet} \propto \overbrace{p(x|\theta)}^{Multinomial} \underbrace{p(\theta)}_{Dirichlet}
+$$
+
+Es decir, la distribución posterior se distribuye Dirichlet si hay un modelo para los datos con distribución **Multinomial**. Detalles técnicos [aquí](https://stephentu.github.io/writeups/dirichlet-conjugate-prior.pdf)
+
+::: {.callout-note collapse="true"}
+## Distribución Multinomial
+
+La distribución multinomial es una **generalización de la distribución binomial**. En este caso, en un experimento interesa estudiar no la ocurrencia de un único suceso o la de su contrario, sino la de varios sucesos.
+
+**Ejemplo:** Encuesta sobre preferencia de tres bebidas: café, jugo o té. Supongamos que tenemos información sobre la probabilidad de preferencia de y se realizan 100 encuestas, con una distribución multinomial podríamos calcular algo del tipo: la probabilidad que 50 personas prefieran café, 30 personas prefieran jugo y 20 personas prefieran té. Ajá, ¿empieza a hacer sentido que papel jugará la Dirichlet?
+:::
+
+Si todo esto te es ajeno, vamos a algo un poco más interesante, visualicemos esta distribución y obtengamos así una intuición de como podemos caracterizar el modelo Multinomial.
+
+## Visualizando la distribución 🎨
+
+## Referencias 🔗
+
+- [Dirichlet Distribution](https://builtin.com/data-science/dirichlet-distribution)
+
+- [Visualizing Dirichlet](https://blog.bogatron.net/blog/2014/02/02/visualizing-dirichlet-distributions)

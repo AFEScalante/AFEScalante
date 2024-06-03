@@ -1,11 +1,50 @@
 ---
-title: "AFEScalante"
+title: "Angel Escalante"
+image: media/foto1.jpeg
+toc: false
+about:
+  template: solana
+  image-shape: round
+  image-width: 20em
+  links:
+    - text: LinkedIn
+      href: https://www.linkedin.com/in/%C3%A1ngel-escalante-ab895b158/
+    - text: GitHub
+      href: https://github.com/AFEScalante
+    - text: Email
+      href: mailto:a.fer.esca@gmail.com
 ---
 
-This is a Quarto website.
+::: {#hero-heading}
+👋 ¡Hola! Soy un apasionado por la programación, la ciencia de datos y el desarrollo web. Me encanta combinar mis habilidades analíticas con la tecnología para resolver problemas complejos y crear soluciones innovadoras. Mis principales intereses son:
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+**Programación**: Desarrollo de algoritmos y soluciones en diversos lenguajes, sobre todo {{<fa brands python>}}
 
-```{r}
-1 + 1
-```
+**Ciencia de Datos**: Análisis y visualización de datos, modelos predictivos y machine learning. Mi corazón va con {{<fa brands r-project>}}
+
+**Desarrollo Web**: Creación de dashboards interactivos y aplicaciones web, desde el frontend hasta el backend. {{<fa brands js>}} {{<fa brands react>}} {{<fa brands node-js>}}
+
+## Educación
+
+{{<fa graduation-cap>}} **Instituto de Investigación en Matemáticas Aplicadas y Sistemas** \| CDMX, México \| Especialidad Estadística Aplicada \| *Agosto 2023 - presente*
+
+{{<fa graduation-cap>}} **Benemérita Universidad Autónoma de Puebla** \| Puebla, México \| Licenciatura en Actuaría \| *Julio 2011 - Agosto 2017*
+
+## Experiencia
+
+[**Kantar**](https://www.kantar.com/latin-america) \| **Data Scientist (Global Analytics)** \| *Mayo 2024 - presente*
+
+[**Appsilon**](https://www.appsilon.com/) \| **R Shiny Engineer** \| *Septiembre 2022 - Mayo 2024*
+
+[**Kantar**](https://www.kantar.com/latin-america) \| **Data Scientist** \| *Agosto 2017 - Septiembre 2022*
+
+## Otros intereses
+
+{{<fa solid music>}} Música
+
+{{<fa solid book>}} Literatura
+
+{{<fa solid chess>}} Ajedrez
+:::
+
+------------------------------------------------------------------------

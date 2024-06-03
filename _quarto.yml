@@ -3,16 +3,16 @@ project:
   output-dir: docs
 
 website:
-  title: "Angel Escalante"
+  title: "angel's blog"
   navbar:
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
+      - posts.qmd
 
 format:
   html:
-    theme: cosmo
+    theme: sandstone
     css: styles.css
     toc: true
 

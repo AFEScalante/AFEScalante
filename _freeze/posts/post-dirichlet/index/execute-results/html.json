@@ -1,0 +1,15 @@
+{
+  "hash": "272c5f3b6d01f25fc997d72c15229a6e",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"¿Qué es la distribución Dirichlet?\"\nauthor: \"Angel Escalante\"\ndate: \"2024-06-02\"\ncategories: [proability, code, dirichlet]\nimage: \"bosque.jpg\"\n---\n\n\n## Distribución Dirichlet\n\n\n::: {.cell}\n\n```{.r .cell-code}\n1 + 1\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] 2\n```\n\n\n:::\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
